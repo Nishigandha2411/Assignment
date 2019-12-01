@@ -1,0 +1,51 @@
+ <div class="card">
+  <div class="card-body">
+    <h4 class="form-group">Products</h4>
+  </div>
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>price</th>
+        <th>latestReviewDate</th>
+        <th>domain</th>
+        <th> imageUrl</th>
+        <th> name</th>
+        <th>title</th>
+        <th>category</th>
+        <th>productId</th>
+        <th> createdAt</th>
+        <th> reviewCount</th>
+        <th> topScores</th>
+            
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td scope="row">{{product.price}}</td>
+        <td>{{product.latestReviewDate}}</td>
+        <td>{{product.domain}}</td>
+
+       <td><img style="height: 50px;width: 50px;"[src]="product.imageUrl" alt="image"></td> 
+      <!-- <td> <img [src]="product.imageUrl" alt="imageUrl"> </td>-->
+        <td>{{product.name}}</td>
+        <td>{{product.title}}</td>
+        <td>{{product.category}}</td>
+        <td>{{product.productId}}</td>
+        <td>{{product.createdAt}}</td>
+        <td>{{product.reviewCount}}</td>
+  
+        <td > 
+         
+          <p *ngFor="let score of product.topScores">{{score.topic}}</p>
+         
+        </td>
+       
+      
+
+      </tr>
+    </tbody>
+  </table> 
+
+
+ 
